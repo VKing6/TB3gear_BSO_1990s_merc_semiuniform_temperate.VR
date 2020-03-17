@@ -104,11 +104,11 @@
 
             vestContents[] = {
                 {"ACE_DAGR",1},
+                {"ACRE_SEM52SL",1},
                 {"rhssaf_mag_br_m75",1},
                 {"rhs_mag_an_m8hc",1},
                 {"hlc_30Rnd_9x19_B_MP5",5},
-                {"RH_16Rnd_9x19_CZ",1},
-                {"ACRE_SEM52SL",1}
+                {"RH_16Rnd_9x19_CZ",1}
             };
             backpackContents[] = {
                 {"hlc_30Rnd_9x19_B_MP5",5},
@@ -447,6 +447,35 @@
         };
 
 
+        // ATGM team
+        class ATGMGunner: Soldier_Base {
+            weapons[] = {"hlc_rifle_hk33ka3","ace_dragon_super","ace_dragon_sight"};
+            priKit[] = {"hlc_30rnd_556x45_b_HK33"};
+
+            vestContents[] = {
+                {"hlc_30rnd_556x45_b_HK33",5},
+                {"ACRE_SEM52SL",1},
+                {"hlc_30rnd_556x45_t_HK33",1},
+                {"rhs_mag_an_m8hc",1}
+            };
+
+            backpack[] = {};
+        };
+
+        class ATGMAsst: Soldier_Base {
+            weapons[] = {"hlc_rifle_hk33ka3","ace_dragon_super"};
+            priKit[] = {"hlc_30rnd_556x45_b_HK33"};
+
+            vestContents[] = {
+                {"hlc_30rnd_556x45_b_HK33",5},
+                {"rhs_mag_an_m8hc",1},
+                {"hlc_30rnd_556x45_t_HK33",1}
+            };
+
+            backpack[] = {};
+        };
+
+
         // Mortar section
         class MortarSL: Soldier_Base {
             weapons[] = {"hlc_rifle_hk33ka3","ACE_Yardage450"};
@@ -612,6 +641,14 @@
         };
 
         class MortarAsst: MortarAsst {
+            uniform[] = COLD_UNIFORMS;
+        };
+
+        class ATGMGunner: ATGMGunner {
+            uniform[] = COLD_UNIFORMS;
+        };
+
+        class ATGMAsst: ATGMAsst {
             uniform[] = COLD_UNIFORMS;
         };
 
