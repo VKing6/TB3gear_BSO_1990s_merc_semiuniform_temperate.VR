@@ -1,6 +1,60 @@
 // 1990s era mercenary company with a mish-mash of temperate/woodland camouflage patterns
 // Mostly HK-based weaponry; no night equipment; light armour
 
+
+#define COLD_UNIFORMS {\
+        "usm_bdu_tgrstp",\
+        "usm_bdu_ERDL",\
+        "usm_bdu_portliz",\
+        "usm_bdu_wdl",\
+        "usm_bdu_wdl2",\
+        "usm_bdu_bti_ERDL",\
+        "usm_bdu_bti_portliz",\
+        "usm_bdu_bti_tgrstp",\
+        "usm_bdu_bti_wdl",\
+        "usm_bdum65_ERDL",\
+        "usm_bdum65_odg",\
+        "usm_bdum65_portliz",\
+        "usm_bdum65_tgrstp",\
+        "usm_bdum65_wdl",\
+        "usm_bdum65_wdl2",\
+        "usm_bdum65_wdl3"\
+    }
+
+#define WARM_HATS {\
+        "usm_bdu_boonie_blk",\
+        "usm_bdu_boonie_erdl",\
+        "usm_bdu_boonie_odg",\
+        "usm_bdu_boonie_portliz",\
+        "usm_bdu_boonie_tgrstp",\
+        "usm_bdu_boonie_wdl",\
+        "usm_bdu_cap_blk",\
+        "usm_bdu_cap_erdl",\
+        "usm_bdu_cap_gry",\
+        "usm_bdu_cap_odg",\
+        "usm_bdu_cap_portliz",\
+        "usm_bdu_cap_tgrstp",\
+        "usm_bdu_cap_wdl"\
+    }
+
+#define COLD_HATS {\
+        "LOP_H_Beanie_dpmw",\
+        "LOP_H_Beanie_m81",\
+        "rhs_beanie_green",\
+        "H_Watchcap_blk",\
+        "H_Watchcap_cbr",\
+        "H_Watchcap_camo",\
+        "H_Watchcap_khk",\
+        "usm_bdu_cap_blk",\
+        "usm_bdu_cap_erdl",\
+        "usm_bdu_cap_gry",\
+        "usm_bdu_cap_odg",\
+        "usm_bdu_cap_portliz",\
+        "usm_bdu_cap_tgrstp",\
+        "usm_bdu_cap_wdl"\
+    }
+
+
 // class TB3_Gear {
     class BSO_1990s_merc_semiuniform_temperate_warm {
         // Warm-weather (light jackets, rolled-up sleeves, etc)
@@ -34,7 +88,7 @@
                 "usm_helmet_pasgt_ceswd_blk"
             };
 
-            goggles[] = {};
+            //goggles[] = {};
 
             uniform[] = {
                 "usm_bdu_btisrl_ERDL",
@@ -105,9 +159,9 @@
             vestContents[] = {
                 {"ACE_DAGR",1},
                 {"ACRE_SEM52SL",1},
+                {"hlc_30Rnd_9x19_B_MP5",5},
                 {"rhssaf_mag_br_m75",1},
                 {"rhs_mag_an_m8hc",1},
-                {"hlc_30Rnd_9x19_B_MP5",5},
                 {"RH_16Rnd_9x19_CZ",1}
             };
             backpackContents[] = {
@@ -199,6 +253,53 @@
                 {"rhs_mag_an_m8hc",2},
                 {"rhs_mag_m18_green",1}
             };
+        };
+
+        class Sniper: Soldier_Base {
+            weapons[] = {"rhs_weap_m24sws","RH_cz75","ACE_Yardage450"};
+            priKit[] = {"rhsusf_5Rnd_762x51_m118_special_Mag","rhsusf_acc_m8541_low","rhsusf_acc_m24_muzzlehider_black","rhsusf_acc_harris_swivel"};
+            pisKit[] = {"RH_16Rnd_9x19_CZ"};
+
+            headgear[] = WARM_HATS;
+
+            vestContents[] = {
+                {"ACRE_SEM52SL",1},
+                {"rhsusf_5Rnd_762x51_m118_special_Mag",15},
+                {"ACE_RangeCard",1},
+                {"RH_16Rnd_9x19_CZ",2},
+                {"rhs_mag_an_m8hc",2},
+                {"rhs_mag_m18_green",1}
+            };
+
+            backpack[] = {};
+        };
+
+        class Runner: Soldier_Base {
+            weapons[] = {"hlc_rifle_hk33ka3"};
+            priKit[] = {"hlc_30rnd_556x45_b_HK33"};
+
+            vestContents[] = {
+                {"ACE_DAGR",1},
+                {"hlc_30rnd_556x45_b_HK33",4},
+                {"hlc_30rnd_556x45_t_HK33",1},
+                {"rhssaf_mag_br_m75",2}
+            };
+        };
+
+        class Driver: Soldier_Base {
+            weapons[] = {"hlc_smg_mp5a3"};
+            priKit[] = {"hlc_30Rnd_9x19_B_MP5","hlc_acc_slimlinegrip"};
+
+            headgear[] = WARM_HATS;
+
+            vestContents[] = {
+                {"hlc_30Rnd_9x19_B_MP5",5},
+                {"rhssaf_mag_br_m75",1},
+                {"rhs_mag_an_m8hc",1}
+            };
+
+            backpack[] = {};
+            
         };
 
 
@@ -389,8 +490,8 @@
         };
 
 
-        // Heavy AT section
-        class HATSL: Soldier_Base {
+        // Medium AT section
+        class MATSL: Soldier_Base {
             weapons[] = {"hlc_rifle_hk33ka3","ACE_Yardage450"};
             priKit[] = {"hlc_30rnd_556x45_b_HK33"};
 
@@ -412,7 +513,7 @@
             };
         };
 
-        class HAT: Soldier_Base {
+        class MAT: Soldier_Base {
             weapons[] = {"hlc_rifle_hk33ka3","rhs_weap_maaws"};
             priKit[] = {"hlc_30rnd_556x45_b_HK33"};
             secKit[] = {"rhs_mag_maaws_HEAT","rhs_optic_maaws"};
@@ -429,7 +530,7 @@
             };
         };
 
-        class HATAsst: Soldier_Base {
+        class MATAsst: Soldier_Base {
             weapons[] = {"hlc_rifle_hk33a2"};
             priKit[] = {"hlc_30rnd_556x45_b_HK33"};
 
@@ -545,25 +646,6 @@
     class BSO_1990s_merc_semiuniform_temperate_cold: BSO_1990s_merc_semiuniform_temperate_warm {
         // Cold-weather (heavy jackets)
 
-        #define COLD_UNIFORMS {\
-                "usm_bdu_tgrstp",\
-                "usm_bdu_ERDL",\
-                "usm_bdu_portliz",\
-                "usm_bdu_wdl",\
-                "usm_bdu_wdl2",\
-                "usm_bdu_bti_ERDL",\
-                "usm_bdu_bti_portliz",\
-                "usm_bdu_bti_tgrstp",\
-                "usm_bdu_bti_wdl",\
-                "usm_bdum65_ERDL",\
-                "usm_bdum65_odg",\
-                "usm_bdum65_portliz",\
-                "usm_bdum65_tgrstp",\
-                "usm_bdum65_wdl",\
-                "usm_bdum65_wdl2",\
-                "usm_bdum65_wdl3"\
-            }
-
         class Soldier_Base: Soldier_Base {
             uniform[] = COLD_UNIFORMS;
         };
@@ -582,6 +664,20 @@
 
         class Marksman: Marksman {
             uniform[] = COLD_UNIFORMS;
+        };
+
+        class Sniper: Sniper {
+            uniform[] = COLD_UNIFORMS;
+            headgear[] = COLD_HATS;
+        };
+
+        class Runner: Runner {
+            uniform[] = COLD_UNIFORMS;
+        };
+
+        class Driver: Driver {
+            uniform[] = COLD_UNIFORMS;
+            headgear[] = COLD_HATS;
         };
 
         class SL: SL {
@@ -620,15 +716,23 @@
             uniform[] = COLD_UNIFORMS;
         };
 
-        class HATSL: HATSL {
+        class MATSL: MATSL {
             uniform[] = COLD_UNIFORMS;
         };
 
-        class HAT: HAT {
+        class MAT: MAT {
             uniform[] = COLD_UNIFORMS;
         };
 
-        class HATAsst: HATAsst {
+        class MATAsst: MATAsst {
+            uniform[] = COLD_UNIFORMS;
+        };
+
+        class ATGMGunner: ATGMGunner {
+            uniform[] = COLD_UNIFORMS;
+        };
+
+        class ATGMAsst: ATGMAsst {
             uniform[] = COLD_UNIFORMS;
         };
 
@@ -641,14 +745,6 @@
         };
 
         class MortarAsst: MortarAsst {
-            uniform[] = COLD_UNIFORMS;
-        };
-
-        class ATGMGunner: ATGMGunner {
-            uniform[] = COLD_UNIFORMS;
-        };
-
-        class ATGMAsst: ATGMAsst {
             uniform[] = COLD_UNIFORMS;
         };
 
