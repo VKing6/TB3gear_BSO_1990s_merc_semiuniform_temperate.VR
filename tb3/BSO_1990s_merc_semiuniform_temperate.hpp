@@ -255,25 +255,6 @@
             };
         };
 
-        class Sniper: Soldier_Base {
-            weapons[] = {"rhs_weap_m24sws","RH_cz75","ACE_Yardage450"};
-            priKit[] = {"rhsusf_5Rnd_762x51_m118_special_Mag","rhsusf_acc_m8541_low","rhsusf_acc_m24_muzzlehider_black","rhsusf_acc_harris_swivel"};
-            pisKit[] = {"RH_16Rnd_9x19_CZ"};
-
-            headgear[] = WARM_HATS;
-
-            vestContents[] = {
-                {"ACRE_SEM52SL",1},
-                {"rhsusf_5Rnd_762x51_m118_special_Mag",15},
-                {"ACE_RangeCard",1},
-                {"RH_16Rnd_9x19_CZ",2},
-                {"rhs_mag_an_m8hc",2},
-                {"rhs_mag_m18_green",1}
-            };
-
-            backpack[] = {};
-        };
-
         class Runner: Soldier_Base {
             weapons[] = {"hlc_rifle_hk33ka3"};
             priKit[] = {"hlc_30rnd_556x45_b_HK33"};
@@ -628,6 +609,50 @@
             };
         };
 
+        // Sniper team
+        class Spotter: Soldier_Base {
+            weapons[] = {"hlc_rifle_hk33a2","ACE_Yardage450"};
+            priKit[] = {"hlc_30rnd_556x45_b_HK33"};
+
+            headgear[] = WARM_HATS;
+
+            vestContents[] = {
+                {"ACRE_SEM52SL",1},
+                {"ACE_DAGR",1},
+                {"ACE_RangeCard",1},
+                {"hlc_30rnd_556x45_b_HK33",4},
+                {"hlc_30rnd_556x45_t_HK33",1},
+                {"rhs_mag_an_m8hc",1}
+            };
+            backpackContents[] = {
+                {"rhsusf_5Rnd_762x51_m118_special_Mag",15},
+                {"hlc_30rnd_556x45_b_HK33",4},
+                {"hlc_30rnd_556x45_t_HK33",1},
+                {"ACE_SpottingScope",1},
+                {"Binocular",1},
+                {"rhs_mag_an_m8hc",2},
+                {"rhs_mag_m18_green",1}
+            };
+        };
+
+        class Sniper: Soldier_Base {
+            weapons[] = {"rhs_weap_m24sws","RH_cz75"};
+            priKit[] = {"rhsusf_5Rnd_762x51_m118_special_Mag","rhsusf_acc_m8541_low","rhsusf_acc_m24_muzzlehider_black","rhsusf_acc_harris_swivel"};
+            pisKit[] = {"RH_16Rnd_9x19_CZ"};
+
+            headgear[] = WARM_HATS;
+
+            vestContents[] = {
+                {"rhsusf_5Rnd_762x51_m118_special_Mag",15},
+                {"ACE_RangeCard",1},
+                {"RH_16Rnd_9x19_CZ",2},
+                {"rhs_mag_an_m8hc",2},
+                {"rhs_mag_m18_green",1}
+            };
+
+            backpack[] = {};
+        };
+
         class Newdude: Soldier_Base {
             weapons[] = {};
             priKit[] = {};
@@ -664,11 +689,6 @@
 
         class Marksman: Marksman {
             uniform[] = COLD_UNIFORMS;
-        };
-
-        class Sniper: Sniper {
-            uniform[] = COLD_UNIFORMS;
-            headgear[] = COLD_HATS;
         };
 
         class Runner: Runner {
@@ -746,6 +766,16 @@
 
         class MortarAsst: MortarAsst {
             uniform[] = COLD_UNIFORMS;
+        };
+
+        class Sniper: Sniper {
+            uniform[] = COLD_UNIFORMS;
+            headgear[] = COLD_HATS;
+        };
+
+        class Spotter: Spotter {
+            uniform[] = COLD_UNIFORMS;
+            headgear[] = COLD_HATS;
         };
 
 
