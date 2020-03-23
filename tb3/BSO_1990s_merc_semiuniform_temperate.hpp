@@ -636,7 +636,7 @@
         };
 
         class Sniper: Soldier_Base {
-            weapons[] = {"rhs_weap_m24sws","RH_cz75"};
+            weapons[] = {"rhs_weap_m24sws","RH_cz75","Binocular"};
             priKit[] = {"rhsusf_5Rnd_762x51_m118_special_Mag","rhsusf_acc_m8541_low","rhsusf_acc_m24_muzzlehider_black","rhsusf_acc_harris_swivel"};
             pisKit[] = {"RH_16Rnd_9x19_CZ"};
 
